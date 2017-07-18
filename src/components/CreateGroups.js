@@ -25,8 +25,6 @@ const CreateGroups = () => {
             <CardSection>
                 <Text>EVENTS GROUPS ALERTS SEARCH SETTINGS</Text>
             </CardSection>
-
-
         </Card>
     )
 }
