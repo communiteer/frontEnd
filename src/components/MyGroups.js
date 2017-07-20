@@ -1,34 +1,31 @@
-import React, { Component } from 'react';
-import {
-    ScrollView,
-    Text,
-    View
-} from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, Image, Linking } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
-import Card from './common/Card';
-import CardSection from './common/CardSection';
-import Header from './common/Header';
-import GroupCard from './GroupCard'
-
-export default class MyGroups extends Component {
-    state = {
-        groups: [{id:1,groupName: 'Wackey Races',groupBanner:'https://s1.postimg.org/nkt54pa4f/Wacky-_Races-2016-title.png',admin:'Dick Dasterdly'},
-        {id:2,groupName: 'Wackey Races',groupBanner:'https://s1.postimg.org/nkt54pa4f/Wacky-_Races-2016-title.png',admin:'Dick Dasterdly'},
-        {id:3,groupName: 'Wackey Races',groupBanner:'https://s1.postimg.org/nkt54pa4f/Wacky-_Races-2016-title.png',admin:'Dick Dasterdly'}]
-    }
-
-    renderGroups() {
-        return this.state.groups.map(group =>
-            <GroupCard key={group.id} group={group} />)
-    }
-    render() {
-        return (
-            <Card>
-                <ScrollView>
-                <Header headerText={'My Groups'} />
-                    {this.renderGroups()}
-                </ScrollView>
-            </Card>
-        )
-    }
+const MyGroups = () => {
+	return (
+		<View style={styles.container}>
+			<Text 
+				style={styles.groups}>
+				MY GROUPS
+		</Text>
+		</View>
+	)
 }
+
+const styles = {
+	container: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		backgroundColor: '#bb0000'
+	},
+	groups: {
+		fontSize: 20,
+		textAlign: 'center',
+		margin: 10,
+		color: '#ffffff'	
+	}
+}
+
+export default MyGroups
