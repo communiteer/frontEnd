@@ -12,28 +12,16 @@ import CardSection from './common/CardSection';
 import Header from './common/Header';
 import Input from './common/Input';
 
-export default class SignUp2 extends Component {
-    render() {
+const SignUp2 = () => {
+
         return (
-            <Card>
-                <Header headerText='Choose your skills' />
-                <CardSection>
-                    <ModalDropdown options={['option 1', 'option 2']} />
-                </CardSection>
-                 <CardSection>
-                    <ModalDropdown options={['option 1', 'option 2']} />
-                </CardSection>
-                 <CardSection>
-                    <ModalDropdown options={['option 1', 'option 2']} />
-                </CardSection>
-                 <CardSection>
-                    <ModalDropdown options={['option 1', 'option 2']} />
-                </CardSection>
-                 <CardSection>
-                    <ModalDropdown options={['option 1', 'option 2']} />
-                </CardSection>
-            </Card>
+<View>
+    <Text>
+        SIGN UP 2
+    </Text>
+</View>
 
         )
-    };
 };
+
+export default SignUp2
