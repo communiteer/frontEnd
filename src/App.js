@@ -13,7 +13,9 @@ import MyGroups from './components/MyGroups';
 import Calendar from './components/Calendar';
 import Notifications from './components/Notifications';
 import Search from './components/Search';
-
+import AddEvent from './components/AddEvent';
+import AddGroup from './components/AddGroup';
+import EventCard from './components/EventCard';
 
 const TabIcon = ({ selected, title }) => {
 	return (
@@ -25,11 +27,10 @@ const App = () => {
 
 	return (
 		<Router>
-			<Scene key="root" style={styles.container}>
+			<Scene key="root">
 				<Scene
 					key="tabbar"
 					tabs
-					tabBarStyle={styles.tabBar}
 				>
 
 					<Scene key="calendar" title="CALENDAR" icon={TabIcon}>
@@ -37,7 +38,6 @@ const App = () => {
 							key="calendar"
 							component={Calendar}
 							title="Calendar"
-							initial
 						/>
 					</Scene>
 
@@ -49,13 +49,14 @@ const App = () => {
 						/>
 					</Scene>
 
-					<Scene key="home" title="HOME" icon={TabIcon}>
+					<Scene initial key="home" title="HOME" icon={TabIcon}>
 						<Scene
 							key="profilePage"
 							component={ProfilePage}
 							title="Profile Page"
-							initial
 						/>
+						<Scene key="addGroup" component={AddGroup} title="Add Group!"/>
+						<Scene key="addEvent" component={AddEvent} title="Add Event!"/>
 					</Scene>
 
 					<Scene key="notifications" title="NOTIFICATIONS" icon={TabIcon}>
@@ -64,6 +65,8 @@ const App = () => {
 							component={Notifications}
 							title="Notifications"
 						/>
+						<Scene key="anEvent" component={EventCard} title="The Event"/>
+
 					</Scene>
 
 					<Scene key="search" title="SEARCH" icon={TabIcon}>
