@@ -12,6 +12,7 @@ const Notifications = () => {
 				<Text style={styles.notification}>
 					Notifications !!!
 				</Text>
+				<Text onPress={() => Actions.anEvent()}>A NOTIFICATION</Text>
 			</View>	
 		)
 }
