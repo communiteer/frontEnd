@@ -1,35 +1,34 @@
-import React, { Component } from 'react';
-import {
-    ScrollView,
-    Text,
-    View
-} from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, Image, Linking } from 'react-native';
 
 import Card from './common/Card';
 import CardSection from './common/CardSection';
-import Header from './common/Header';
-import NotificationDetail from './NotificationDetail';
+import { Actions } from 'react-native-router-flux';
 
-export default class Notifications extends Component {
-    state = {
-        messages: [{id: 1,GroupName: 'Wacky Races',Message: 'have posted a new job that matches your skill'},
-        {id: 2,GroupName: 'Wacky Races',Message: 'have posted a new job that matches your skill'},
-        {id: 3,GroupName: 'Wacky Races',Message: 'have posted a new job that matches your skill'}]
-    };
 
-    renderMessage() {
-        return this.state.messages.map(message =>
-            <NotificationDetail key={message.id} message={message} />
-        )
-    }
-    render() {
-        return (
-            <Card>
-                <Header headerText={'Notifications'} />
-                <ScrollView>
-                    {this.renderMessage()}
-                </ScrollView>
-            </Card>
-        )
-    }
+const Notifications = () => {
+		return (
+			<View style={styles.container}>
+				<Text style={styles.notification}>
+					Notifications !!!
+				</Text>
+			</View>	
+		)
 }
+
+const styles = {
+	container: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		backgroundColor: '#bb3040'
+	},
+	notification: {
+		fontSize: 20,
+		textAlign: 'center',
+		margin: 10,
+		color: '#ffffff'	
+	}
+}
+
+export default Notifications
