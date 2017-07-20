@@ -9,7 +9,8 @@ const EventCard = () => {
 
     return (
         <View>        
-            <Text>AN EVENT</Text>
+            <Text>Event details laaaaaa</Text>
+           
         </View>
     )
 };
