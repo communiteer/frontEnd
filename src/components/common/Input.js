@@ -40,4 +40,4 @@ alignItems: 'center'
 }
 };
 
-export default Input; 
+export {Input}; 
