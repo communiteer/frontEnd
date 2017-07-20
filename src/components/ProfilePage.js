@@ -14,6 +14,8 @@ const ProfilePage = () => {
 				style={styles.profile}>
 				PROFILE PAGE
 			</Text>
+			<Text onPress={() => Actions.addGroup()}>Add Group</Text>
+			<Text onPress={() => Actions.addEvent()}>Add Event</Text>
 		</View>
 	)
 };
