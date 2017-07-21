@@ -6,6 +6,8 @@ import {
 	View
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import { Scene, Router } from 'react-native-router-flux'
 
 import ProfilePage from './components/ProfilePage';
@@ -17,14 +19,51 @@ import AddEvent from './components/AddEvent';
 import AddGroup from './components/AddGroup';
 import EventCard from './components/EventCard';
 
-const TabIcon = ({ selected, title }) => {
+
+function CalendarIcon(props) {
 	return (
-		<Text style={{ color: selected ? 'red' : 'black' }}>{title}</Text>
-	);
-};
+		<View>
+			<Icon name="calendar" size={30} color="#900" />
+		</View>
+	)
+}
 
-const App = () => {
 
+function GroupsIcon(props) {
+	return (
+		<View>
+			<Icon name="group" size={30} color="#900" />
+		</View>
+	)
+}
+
+function HomeIcon(props) {
+	return (
+		<View>
+			<Icon name="home" size={30} color="#900" />
+		</View>
+	)
+}
+
+function NotificationsIcon(props) {
+	return (
+		<View>
+			<Icon name="flag" size={30} color="#900" />
+		</View>
+	)
+}
+
+function SearchIcon(props) {
+	return (
+		<View>
+			<Icon name="search" size={30} color="#900" />
+		</View>
+	)
+}
+
+
+class App extends Component {
+render () {
 	return (
 		<Router>
 			<Scene key="root">
@@ -33,54 +72,30 @@ const App = () => {
 					tabs
 				>
 
-					<Scene key="calendar" title="CALENDAR" icon={TabIcon}>
-						<Scene
-							key="calendar"
-							component={Calendar}
-							title="Calendar"
-						/>
+					<Scene tabs key="calendar" title="CALENDAR" icon={CalendarIcon} component={Calendar} hideNavBar>
 					</Scene>
 
-					<Scene key="myGroups" title="GROUPS" icon={TabIcon}>
-						<Scene
-							key="myGroups"
-							component={MyGroups}
-							title="My Groups"
-						/>
+					<Scene tabs key="myGroups" title="GROUPS" icon={GroupsIcon} component={MyGroups} hideNavBar>
 					</Scene>
 
-					<Scene initial key="home" title="HOME" icon={TabIcon}>
-						<Scene
-							key="profilePage"
-							component={ProfilePage}
-							title="Profile Page"
-						/>
-						<Scene key="addGroup" component={AddGroup} title="Add Group!"/>
-						<Scene key="addEvent" component={AddEvent} title="Add Event!"/>
+					<Scene tabs initial key="home" title="HOME" icon={HomeIcon} component={ProfilePage} hideNavBar>
 					</Scene>
 
-					<Scene key="notifications" title="NOTIFICATIONS" icon={TabIcon}>
-						<Scene
-							key="notifications"
-							component={Notifications}
-							title="Notifications"
-						/>
-						<Scene key="anEvent" component={EventCard} title="The Event"/>
-
+					<Scene tabs key="notifications" title="NOTIFICATIONS" icon={NotificationsIcon} component={Notifications} hideNavBar>
 					</Scene>
 
-					<Scene key="search" title="SEARCH" icon={TabIcon}>
-						<Scene
-							key="search"
-							component={Search}
-							title="Search"
-						/>
+					<Scene tabs key="search" title="SEARCH" icon={SearchIcon} component={Search} hideNavBar>
 					</Scene>
 
 				</Scene>
+						<Scene key="addGroup" component={AddGroup} title="Add Group!"/>
+						<Scene key="addEvent" component={AddEvent} title="Add Event!"/>
+						<Scene key="anEvent" component={EventCard} title="The Event"/>
 			</Scene>
 		</Router>
 	);
+
+}
 }
 
 const styles = {
