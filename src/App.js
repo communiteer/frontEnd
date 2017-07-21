@@ -12,7 +12,7 @@ import { Scene, Router } from 'react-native-router-flux'
 
 import ProfilePage from './components/ProfilePage';
 import MyGroups from './components/MyGroups';
-import Calendar from './components/Calendar';
+import CalendarPage from './components/CalendarPage';
 import Notifications from './components/Notifications';
 import Search from './components/Search';
 import AddEvent from './components/AddEvent';
@@ -72,7 +72,7 @@ render () {
 					tabs
 				>
 
-					<Scene tabs key="calendar" title="CALENDAR" icon={CalendarIcon} component={Calendar} hideNavBar>
+					<Scene tabs key="calendar" title="CALENDAR" icon={CalendarIcon} component={CalendarPage} hideNavBar>
 					</Scene>
 
 					<Scene tabs key="myGroups" title="GROUPS" icon={GroupsIcon} component={MyGroups} hideNavBar>
