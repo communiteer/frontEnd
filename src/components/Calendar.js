@@ -23,8 +23,6 @@ export default class Calendar extends Component {
   }
 
   render() {
-    
-    console.log(this.state.items);
     return (
       <Agenda
         items={this.state.items}
@@ -51,7 +49,6 @@ export default class Calendar extends Component {
   }
 
   renderItem (item) {
-    console.log('******', item)
     return (
       <View style={[styles.item, {height: 50}]}>
           <Text onPress={()=> Actions.anEvent()}>{item.groupname}</Text>
@@ -60,23 +57,21 @@ export default class Calendar extends Component {
   }
 
   renderEmptyDate() {
-
-    console.log('RENDER EMPTY DATE', arguments);
     return (
       <View style={styles.emptyDate}></View>
     );
-  }
+  };
 
   rowHasChanged(r1, r2) {
     console.log('ROW HAS CHANGED');
     return r1.name !== r2.name;
-  }
+  };
 
   timeToString(time) {
     const date = new Date(time);
     return date.toISOString().split('T')[0];
-  }
-}
+  };
+};
 
 const styles = StyleSheet.create({
   item: {
