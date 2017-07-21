@@ -24,7 +24,7 @@ const styles = {
     },
     buttonStyle: {
         flex: 1,
-        alignSelf: 'stretch',
+        flexDirection:'row',
         backgroundColor:5,
         borderRadius: 5,
         borderWidth: 1,
@@ -35,4 +35,3 @@ const styles = {
 }
 
 export {Button};
-
