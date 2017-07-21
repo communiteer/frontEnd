@@ -3356,8 +3356,8 @@ react-native-calendar@^0.12.3:
     moment ">=2.10.3"
 
 react-native-calendars@^1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/react-native-calendars/-/react-native-calendars-1.5.3.tgz#882937a40045152d97fb20a5159c68783ce26601"
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/react-native-calendars/-/react-native-calendars-1.5.4.tgz#d8b1741c64d8424b47518f1e55d97d7cbc5fca6e"
   dependencies:
     prop-types "^15.5.10"
     xdate "^0.8.0"
@@ -3398,6 +3398,14 @@ react-native-tab-view@^0.0.67:
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-0.0.67.tgz#cdd146fe5e5d4baff6c89f2d5d0b15fa23db39d0"
   dependencies:
     prop-types "^15.5.8"
+
+react-native-vector-icons@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-4.2.0.tgz#0594b68debdd758dce4c565bf02e2d64d7004d82"
+  dependencies:
+    lodash "^4.0.0"
+    prop-types "^15.5.8"
+    yargs "^6.3.0"
 
 react-native@0.46.3:
   version "0.46.3"
@@ -3986,8 +3994,8 @@ string-width@^1.0.1, string-width@^1.0.2:
     strip-ansi "^3.0.0"
 
 string-width@^2.0.0, string-width@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/string-width/-/string-width-2.1.0.tgz#030664561fc146c9423ec7d978fe2457437fe6d0"
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/string-width/-/string-width-2.1.1.tgz#ab93f27a8dc13d28cac815c462143a6d9012ae9e"
   dependencies:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^4.0.0"
@@ -4167,8 +4175,8 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
 ua-parser-js@^0.7.9:
-  version "0.7.13"
-  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.13.tgz#cd9dd2f86493b3f44dbeeef3780fda74c5ee14be"
+  version "0.7.14"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.14.tgz#110d53fa4c3f326c121292bbeac904d2e03387ca"
 
 uglify-js@2.7.5:
   version "2.7.5"
@@ -4440,7 +4448,7 @@ yargs-parser@^5.0.0:
   dependencies:
     camelcase "^3.0.0"
 
-yargs@^6.4.0:
+yargs@^6.3.0, yargs@^6.4.0:
   version "6.6.0"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-6.6.0.tgz#782ec21ef403345f830a808ca3d513af56065208"
   dependencies:
