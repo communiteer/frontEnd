@@ -2,74 +2,81 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
-  StyleSheet
+  StyleSheet,
+  TouchableOpacity
 } from 'react-native';
 import {Agenda} from 'react-native-calendars';
+
+import Card from './common/Card';
 
 export default class Calendar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: {}
+      items: {
+        '2017-07-16': {
+          groupname:'Wackey Races'
+        }
+      }
     };
   }
 
   render() {
+    console.log(this.state.items);
     return (
       <Agenda
         items={this.state.items}
         loadItemsForMonth={this.loadItems.bind(this)}
-        selected={'2017-05-16'}
+        selected={'2017-07-14'}
         renderItem={this.renderItem.bind(this)}
         renderEmptyDate={this.renderEmptyDate.bind(this)}
         rowHasChanged={this.rowHasChanged.bind(this)}
-        /*monthFormat={'yyyy'}
-        theme={{calendarBackground: 'red'}}
-        renderDay={(day, item) => (<Text>{day ? day.day: 'item'}</Text>)}*/
+        /*renderComponent={this.renderComponent.bind(this)}*/
       />
     );
   }
 
   loadItems(day) {
+    // dispatch thunk for fetching events
     setTimeout(() => {
+      const newItems = {};
       for (let i = -15; i < 85; i++) {
         const time = day.timestamp + i * 24 * 60 * 60 * 1000;
         const strTime = this.timeToString(time);
-        if (!this.state.items[strTime]) {
-          this.state.items[strTime] = [];
-          const numItems = Math.floor(Math.random() * 5);
-          for (let j = 0; j < numItems; j++) {
-            this.state.items[strTime].push({
-              name: 'Item for ' + strTime,
-              height: Math.max(50, Math.floor(Math.random() * 150))
-            });
-          }
-        }
+        newItems[strTime] = [this.state.items[strTime]] || []
       }
-      console.log(this.state.items);
-      // we need to add events to each of these objects. 
-      const newItems = {};
-      Object.keys(this.state.items).forEach(key => {newItems[key] = this.state.items[key];});
-      this.setState({
-        items: newItems
-      });
+      this.setState({items: newItems});
     }, 1000);
     // console.log(`Load Items for ${day.year}-${day.month}`);
   }
+  // renderComponent() {
+  //   console.log('click damn you click!')
+  //   return (
+  //     <Card />
+  //   )
+  // }
 
-  renderItem(item) {
+  renderItem (item) {
+    console.log('******', item)
     return (
-      <View style={[styles.item, {height: item.height}]}><Text>{item.name}</Text></View>
+      <View style={[styles.item, {height: 50}]}>
+        <TouchableOpacity >
+          <Text>{item.groupname}</Text>
+        </TouchableOpacity>
+      </View>
     );
   }
 
   renderEmptyDate() {
+
+    console.log('RENDER EMPTY DATE', arguments);
     return (
-      <View style={styles.emptyDate}><Text>This is empty date!</Text></View>
+      <View style={styles.emptyDate}></View>
     );
   }
 
   rowHasChanged(r1, r2) {
+    console.log('ROW HAS CHANGED');
     return r1.name !== r2.name;
   }
 
