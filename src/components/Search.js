@@ -34,7 +34,7 @@ constructor(props) {
 						{this.props.groups.groups.map(group => {
 							return (
 								<View key={group.id}>
-									<GroupCard group={group} />
+									<GroupCard key={group.id} group={group} />
 								</View>
 							)
 						})}
