@@ -1,6 +1,6 @@
 import * as types from './types'
 import { ROOT } from '../../config.js';
-import axios from 'axois'
+import axios from 'react-native-axios'
 
  // [SEARCH] FETCH ALL GROUPS IN AREA
 export function fetchAllGroupsInArea() {

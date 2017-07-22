@@ -1,40 +1,91 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Linking } from 'react-native';
+import { connect } from 'react-redux'
+import { Text, View, Image } from 'react-native';
+import { FetchUserData } from '../actions'
 
-import Card from './common/Card';
-import CardSection from './common/CardSection';
+import { Card, CardSection } from './common';
+
 import { Actions } from 'react-native-router-flux';
+import * as actions from '../actions';
 
+const userId = 1;
 
-const ProfilePage = () => {
+class ProfilePage extends React.Component {
 
-	return (
-		<View style={styles.container}>
-			<Text 
-				style={styles.profile}>
-				PROFILE PAGE
-			</Text>
-			<Text onPress={() => Actions.addGroup()}>Add Group</Text>
-			<Text onPress={() => Actions.addEvent()}>Add Event</Text>
-		</View>
-	)
+	componentDidMount() {
+		this.props.fetchUserData()
+
+	}
+
+	render() {
+		return (
+			<Card style={styles.containerStyle}>
+				<CardSection>
+					<Image
+						style={styles.imageStyle}
+						source={{uri: this.props.user.profilePicture}} />
+				</CardSection>
+
+				<CardSection>
+					<View style={styles.headerContentStyle}>
+						<Text>Hello {this.props.user.user_fName}</Text>
+					</View>
+				</CardSection>
+
+				<Text onPress={() => Actions.addGroup()}>Add Group</Text>
+				<Text onPress={() => Actions.addEvent()}>Add Event</Text>
+			</Card>
+		)
+	}
 };
 
+const mapDispatchToProps = (dispatch) => {
+	return {
+		fetchUserData: () => {
+			dispatch(actions.fetchUserData(userId))
+		}
+	}
+}
+
+const mapStateToProps = (state) => {
+	return {
+		user: state.user
+	}
+}
+
 const styles = {
-	container: {
-		flex: 1,
+	containerStyle: {
+		paddingTop: 30,
+		backgroundColor: '#bb0000'
+	},
+
+	headerContentStyle: {
+		flexDirection: 'column',
+		justifyContent: 'space-around'
+	},
+	headerTextStyle: {
+		fontSize: 18
+	},
+	thumbnailStyle: {
+		height: 50,
+		width: 50
+
+	},
+	thumbnailContainerStyle: {
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#bb3000'
+		marginLeft: 10,
+		marginRight: 10
+
 	},
-	profile: {
-		fontSize: 20,
-		textAlign: 'center',
-		margin: 10,
-		color: '#ffffff'	
+	imageStyle: {
+		height: 300,
+		flex: 1,
+		width: null
+
 	}
 }
 
 
 
-export default ProfilePage;
+export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage);

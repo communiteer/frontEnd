@@ -6,8 +6,6 @@ import { CardSection } from './common';
 
 
 const EventCard = (event) => {
-    console.log('*******:', event)
-
     return (
         <Card>
             <CardSection>
