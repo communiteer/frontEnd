@@ -1,16 +1,18 @@
 import React from 'react';
-import { Text, View, Image, Linking } from 'react-native';
+import { Text, View } from 'react-native';
 
-import Card from './common/Card';
-import CardSection from './common/CardSection';
+import {Card, CardSection} from './common';
 
 
 const GroupCard = ({ group }) => {
-
     return (
-        <View>
-            <Text>A GROUP</Text>
-        </View>
+        <Card>
+                <Text>{group.group_name}</Text>
+                <Text>{group.admin_fname}</Text>
+                <Text>{group.admin_lname}</Text>
+                <Text>{group.description}</Text>
+                <Text>{group.league}</Text>
+        </Card>
     )
 };
 
