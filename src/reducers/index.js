@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
-import DummyData from './dummyReducer';
+import UserProfileReducer from './UserProfileReducer';
+import UserEventsReducer from './UserEventsReducer';
 
 export default combineReducers({
-  dummyData: DummyData
+  user: UserProfileReducer,
+  userEvents: UserEventsReducer,
+  
+
 })
