@@ -8,17 +8,17 @@ const initialState = {
 
 export default (initialState = state, action) => {
     switch (action.type) {
-        case 'FETCH_ALL_SKILLS_REQUEST':
+        case types.FETCH_ALL_SKILLS_REQUEST:
             return { ...state, loading: true }
             break;
-        case 'FETCH_ALL_SKILLS_SUCCESS':
+        case types.FETCH_ALL_SKILLS_SUCCESS:
             return {
                 ...state,
-                skills: [action.data],
+                skills: action.data,
                 loading: false
             }
             break;
-        case 'FETCH_ALL_SKILLS_ERROR':
+        case types.FETCH_ALL_SKILLS_ERROR:
             return {...state,error: action.error,loading:false}
             break;
             default:

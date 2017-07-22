@@ -8,13 +8,13 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case 'FETCH_USER_GROUPS_REQUEST':
+        case types.FETCH_USER_GROUPS_REQUEST:
             return { ...state, loading: true }
             break;
-        case 'FETCH_USER_GROUPS_SUCCESS':
+        case types.FETCH_USER_GROUPS_SUCCESS:
             return { ...state, groups: [action.data], loading: false }
             break;
-        case 'FETCH_USER_GROUPS_ERROR':
+        case types.FETCH_USER_GROUPS_ERROR:
             return { ...state, error: action.error, loading: false }
             default: 
             return state;

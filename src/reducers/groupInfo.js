@@ -12,10 +12,10 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case 'FETCH_GROUP_INFO_REQUEST':
+        case types.FETCH_GROUP_INFO_REQUEST:
             return { ...state, loading: true }
             break;
-        case 'FETCH_GROUP_INFO_SUCCESS':
+        case types.FETCH_GROUP_INFO_SUCCESS:
             return {
                 ...state,
                 groupName: action.data.name,
@@ -25,7 +25,7 @@ export default (state = initialState, action) => {
                 loading: false
             }
             break;
-        case 'FETCH_GROUP_INFO_ERROR':
+        case types.FETCH_GROUP_INFO_ERROR:
             return {...state,error: action.error,loading:false}
             break;
             default:

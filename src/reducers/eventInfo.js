@@ -1,21 +1,21 @@
 import * as types from '../actions/types';
 
 const initialState = {
-    eventName: null,
+    eventName: '',
     areaId: null,
-    admin: null,
-    description: null,
-    contactDetails: null,
+    admin: '',
+    description: '',
+    contactDetails: '',
     loading: false,
     error: null
 }
 
 export default (initialState = state, action) => {
     switch (action.type) {
-        case 'FETCH_EVENT_REQUEST':
+        case types.FETCH_EVENT_REQUEST:
             return { ...state, loading: true }
             break;
-        case 'FETCH_EVENT_SUCCESS':
+        case types.FETCH_EVENT_SUCCESS:
             return {
                 ...state,
                 eventName: action.data.name,
@@ -25,7 +25,7 @@ export default (initialState = state, action) => {
                 loading: false
             }
             break;
-        case 'FETCH_EVENT_ERROR':
+        case types.FETCH_EVENT_ERROR:
             return {...state,error: action.error,loading:false}
             break;
             default:
