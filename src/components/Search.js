@@ -1,27 +1,28 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, Linking, ScrollView } from 'react-native';
+import { connect } from 'react-redux'
+import { Text, View, ScrollView } from 'react-native';
+import { FetchAllGroupsInArea, FetchAllEventsInArea } from '../actions'
 
 import { Header, Button, CardSection } from './common';
-import EventCard from './EventCard';
+import GroupCard from './GroupCard';
 
 import { Actions } from 'react-native-router-flux';
+import * as actions from '../actions';
 
+const areaId = 1;
 
-const state = {
-	events: [{ name: 'event1', date: 'somedate1', skills: 'someskills1' },
-	{ name: 'event2', date: 'somedate1', skills: 'someskills1' },
-	{ name: 'event3', date: 'somedate1', skills: 'someskills1' },
-	{ name: 'event4', date: 'somedate1', skills: 'someskills1' },
-	{ name: 'event5', date: 'somedate1', skills: 'someskills1' },
-	{ name: 'event6', date: 'somedate1', skills: 'someskills1' },
-	{ name: 'event7', date: 'somedate1', skills: 'someskills1' },
-	{ name: 'event8', date: 'somedate1', skills: 'someskills1' },
-	{ name: 'event9', date: 'somedate1', skills: 'someskills1' },
-	{ name: 'event10', date: 'somedate1', skills: 'someskills1' }]
-}
 class Search extends Component {
+constructor(props) {
+	super(props)
+}
+
+	componentDidMount() {
+		this.props.fetchAllGroupsInArea()
+	//	this.props.fetchAllEventsInArea()
+	}
 
 	render() {
+		console.log(this.props.groups.groups)
 		return (
 			<View>
 				<Header headerText='Search' />
@@ -29,13 +30,37 @@ class Search extends Component {
 					<Button>Groups</Button>
 					<Button>Events</Button>
 				</CardSection>
-				<ScrollView>
-					{state.events.map(event => {
-						return <EventCard key={event.name} event={event} />
-					})}
-				</ScrollView>
+			<ScrollView>
+						{this.props.groups.groups.map(group => {
+							return (
+								<View key={group.id}>
+									<GroupCard group={group} />
+								</View>
+							)
+						})}
+			</ScrollView>
 			</View>
 		)
+	}
+}
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		fetchAllGroupsInArea: () => {
+			dispatch(actions.fetchAllGroupsInArea(areaId))
+		}
+		,
+		// fetchAllEventsInArea: () => {
+		// 	dispatch(actions.fetchAllEventsInArea(areaId))
+		// }
+	}
+}
+
+const mapStateToProps = (state) => {
+	return {
+		groups: state.groups
+		// ,
+		// events: state.events
 	}
 }
 
@@ -54,4 +79,4 @@ const styles = {
 	}
 }
 
-export default Search;
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
