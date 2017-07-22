@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Text, View, Image } from 'react-native';
 import { FetchUserData } from '../actions'
@@ -8,9 +8,10 @@ import { Card, CardSection } from './common';
 import { Actions } from 'react-native-router-flux';
 import * as actions from '../actions';
 
+// hard coded user id - get this at log in???
 const userId = 1;
 
-class ProfilePage extends React.Component {
+class ProfilePage extends Component {
 
 	componentDidMount() {
 		this.props.fetchUserData()
