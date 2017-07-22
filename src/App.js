@@ -6,9 +6,8 @@ import {
 	View
 } from 'react-native';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import Thunk from 'redux-thunk';
-import createLogger from 'redux-logger';
 import reducers from './reducers';
 import { Scene, Router } from 'react-native-router-flux'
 import RouterComponent from './Router';
@@ -19,7 +18,7 @@ import RouterComponent from './Router';
 
 class App extends Component {
 	render () {
-		const store = createStore(reducers, {}, applyMiddleware(Thunk))
+	const store = createStore(reducers, {}, applyMiddleware(Thunk))
 		return (
 			<Provider store={store}>
 				<RouterComponent />
