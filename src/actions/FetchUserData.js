@@ -1,16 +1,17 @@
 import * as types from './types'
 import { ROOT } from '../../config.js';
-import axios from 'axois'
+import axios from 'react-native-axios'
 
 
-export function fetchUserData() {
+export function fetchUserData(id) {
+   // console.log('FETCH USER DATA REQUEST')
   return function (dispatch) {
     dispatch(fetchUserRequest());
     // go get data through fetch request
-    axios.get(`${ROOT}/users/:id`)
+    axios.get(`${ROOT}/users/1`)
       .then(res => {
         //receive data
-        dispatch(fetchUserSuccess(res.data.user))
+        dispatch(fetchUserSuccess(res.data.data[0]))
       })
       .catch(err => {
         dispatch(fetchUserError(err))
