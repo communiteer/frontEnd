@@ -4,7 +4,7 @@ import { Text, View, ScrollView } from 'react-native';
 import { FetchAllGroupsInArea, FetchAllEventsInArea } from '../actions'
 
 import { Header, Button, CardSection } from './common';
-import GroupCard from './GroupCard';
+import SearchGroupCard from './SearchGroupCard';
 
 import { Actions } from 'react-native-router-flux';
 import * as actions from '../actions';
@@ -30,7 +30,7 @@ constructor(props) {
 						{this.props.groups.groups.map(group => {
 							return (
 								<View key={group.group_id}>
-									<GroupCard group={group} />
+									<SearchGroupCard group={group} />
 								</View>
 							)
 						})}
