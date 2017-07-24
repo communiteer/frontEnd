@@ -4,7 +4,7 @@ import { Text, View, ScrollView } from 'react-native';
 import { fetchAllEventsInArea } from '../actions'
 
 import { Header, Button, CardSection } from './common';
-import EventCard from './EventCard';
+import SearchEventCard from './SearchEventCard';
 
 import { Actions } from 'react-native-router-flux';
 import * as actions from '../actions';
@@ -29,7 +29,7 @@ constructor(props) {
 						{this.props.events.events.map(event => {
 							return (
 								<View key={event.event_id}>
-									<EventCard event={event} />
+									<SearchEventCard event={event} />
 								</View>
 							)
 						})}
