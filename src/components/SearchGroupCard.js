@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 import {Card, CardSection} from './common';
 
 
-const GroupCard = ({ group }) => {
+const SearchGroupCard = ({ group }) => {
     return (
         <Card>
                 <Text>{group.group_name}</Text>
@@ -17,4 +17,4 @@ const GroupCard = ({ group }) => {
 };
 
 
-export default GroupCard;
+export default SearchGroupCard;

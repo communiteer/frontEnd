@@ -1,3 +1,3 @@
 module.exports = {
-  ROOT: 'http://localhost:3000'
+  ROOT: 'https://thawing-temple-24567.herokuapp.com'
 }

@@ -5,14 +5,14 @@ import { Card } from './common';
 import { CardSection } from './common';
 
 
-const EventCard = ({event}) => {
+const SearchEventCard = ({event}) => {
     return (
         <Card>
             <CardSection>
                 <View>
-                    <Text>{event.name}</Text>
-                    <Text>{event.date}</Text>
-                    <Text>{event.skills}</Text>
+                    <Text>{event.event_name}</Text>
+                    <Text>{event.event_date}</Text>
+                    <Text>{event.event_time}</Text>
                 </View>
             </CardSection>
         </Card>
@@ -21,4 +21,4 @@ const EventCard = ({event}) => {
 
 
 
-export default EventCard;
+export default SearchEventCard;

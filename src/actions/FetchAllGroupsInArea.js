@@ -3,13 +3,13 @@ import { ROOT } from '../../config.js';
 import axios from 'react-native-axios'
 
  // [SEARCH] FETCH ALL GROUPS IN AREA
-export function fetchAllGroupsInArea() {
+export function fetchAllGroupsInArea(areaId) {
   return function (dispatch) {
     dispatch(fetchGroupRequest());
-    axios.get(`${ROOT}/groups/area/:area`)
+    axios.get(`${ROOT}/groups/area/${areaId}`)
       .then(res => {
         //receive data
-        dispatch(fetchGroupSuccess(res.data.groups))
+        dispatch(fetchGroupSuccess(res.data.data))
       })
       .catch(err => {
         dispatch(fetchGroupError(err))
