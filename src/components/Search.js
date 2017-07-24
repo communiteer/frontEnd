@@ -5,6 +5,8 @@ import { FetchAllGroupsInArea, FetchAllEventsInArea } from '../actions'
 
 import { Header, Button, CardSection } from './common';
 import GroupCard from './GroupCard';
+import SearchGroups from './SearchGroups';
+import SearchEvents from './SearchEvents';
 
 import { Actions } from 'react-native-router-flux';
 import * as actions from '../actions';
@@ -12,55 +14,51 @@ import * as actions from '../actions';
 const areaId = 1;
 
 class Search extends Component {
-constructor(props) {
-	super(props)
+constructor (props) {
+	super(props);
+	
+	this.state = {
+		page: 'groups'
+	}
 }
 
-	componentDidMount() {
-		this.props.fetchAllGroupsInArea()
-	//	this.props.fetchAllEventsInArea()
-	}
-
 	render() {
-		console.log(this.props.groups.groups)
+		
 		return (
 			<View>
 				<Header headerText='Search' />
 				<CardSection>
-					<Button>Groups</Button>
-					<Button>Events</Button>
+					<Button onPress={this.setGroups.bind(this)}>Groups</Button>
+					<Button onPress={this.setEvents.bind(this)}>Events</Button>
 				</CardSection>
-			<ScrollView>
-						{this.props.groups.groups.map(group => {
-							return (
-								<View key={group.id}>
-									<GroupCard key={group.id} group={group} />
-								</View>
-							)
-						})}
-			</ScrollView>
+
+				 <CardSection>
+					{this.renderSearchComponent()}
+				</CardSection> 
+
 			</View>
 		)
 	}
-}
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-		fetchAllGroupsInArea: () => {
-			dispatch(actions.fetchAllGroupsInArea(areaId))
-		}
-		,
-		// fetchAllEventsInArea: () => {
-		// 	dispatch(actions.fetchAllEventsInArea(areaId))
-		// }
+	setGroups() {
+		return (this.setState({
+			page: 'groups'
+		}))
+
 	}
+
+	setEvents() {
+		return (this.setState({
+			page: 'events'
+		}))
 }
 
-const mapStateToProps = (state) => {
-	return {
-		groups: state.groups
-		// ,
-		// events: state.events
+	renderSearchComponent() {
+		if (this.state.page === 'events') {
+			return <SearchEvents />;
+		}
+		return 	<SearchGroups />;
+		
 	}
 }
 
@@ -79,4 +77,4 @@ const styles = {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default Search;
