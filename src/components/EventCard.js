@@ -5,7 +5,7 @@ import { Card } from './common';
 import { CardSection } from './common';
 
 
-const EventCard = (event) => {
+const EventCard = ({event}) => {
     return (
         <Card>
             <CardSection>
