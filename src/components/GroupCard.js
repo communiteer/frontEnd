@@ -1,15 +1,21 @@
 import React from 'react';
 import { Text, View, Image, Linking } from 'react-native';
 
-import Card from './common/Card';
-import CardSection from './common/CardSection';
+import {CardSection, Card} from './common';
 
 
 const GroupCard = ({ group }) => {
 
     return (
         <View>
-            <Text>A GROUP</Text>
+        <Card>
+            <CardSection>
+                <View>
+                    <Text>{group.group_name}</Text>
+                    <Text>{group.admin_fname + ' ' + group.admin_fname}</Text>
+                </View>
+            </CardSection>
+        </Card>
         </View>
     )
 };
