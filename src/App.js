@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux'
 import Thunk from 'redux-thunk';
 import reducers from './reducers';
-import { Scene, Router } from 'react-native-router-flux'
+
 import RouterComponent from './Router';
 
 
