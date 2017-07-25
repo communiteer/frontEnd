@@ -6,10 +6,8 @@ import axios from 'react-native-axios'
 export function fetchGroupInfo() {
   return function (dispatch) {
     dispatch(fetchGroupInfoRequest());
-    // go get data through fetch request
     axios.get(`${ROOT}/groups/:id`)
       .then(res => {
-        //receive data
         dispatch(fetchGroupInfoSuccess(res.data))
       })
       .catch(err => {
