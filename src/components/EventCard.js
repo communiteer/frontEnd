@@ -11,12 +11,12 @@ class EventCard extends Component {
 	}
 
 	componentDidMount() {
-		// console.log(this.props)
 		this.props.fetchAllEventSkills(this.props.eventId)
 	}
 
 	render() {
-		console.log(this.props.eventSkills.eventSkills[0])
+		console.log(this.props)
+
 		return (
 			<Card>
 				<ScrollView>

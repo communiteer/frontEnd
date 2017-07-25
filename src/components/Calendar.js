@@ -47,11 +47,10 @@ class Calendar extends Component {
         newItems[strTime] = this.state.items[strTime] || []
         this.props.event.forEach(events => {
           if (strTime === events.event_date.slice(0, 10)) {
-            console.log(events)
             newItems[strTime] = [{
               "event_id": events.event_id,
               "event_name": events.event_name,
-              "event_date": events.event_name,
+              "event_date": events.event_date,
               "event_time": events.event_time.slice(0,5),
               "event_description": events.event_descrtiption,
               "area_name": events.area_name,
@@ -67,10 +66,12 @@ class Calendar extends Component {
 
   renderItem(item) {
     return (
-      <View style={[styles.item, { height: 70 }]} onPress={() => Actions.anEvent()}>
-        <Text onPress={() => Actions.anEvent()}>{item.group_name}</Text>
+      <View style={[styles.item, { height: 70 }]} >
+        <TouchableOpacity onPress={() => Actions.anEvent(item)}>
+        <Text>{item.group_name}</Text>
         <Text>{item.event_name}</Text>
         <Text>{item.event_time}</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -98,7 +99,6 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 const mapStateToProps = (state) => {
-
   return {
     event: state.userEvents.userEvents.data || [],
   }
