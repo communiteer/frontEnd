@@ -8,3 +8,4 @@ export * from './FetchGroupEvents';
 export * from './FetchEvent';
 export * from './FetchAllSkills';
 export * from './FetchAllAreas';
+export * from './FetchAllEventSkills';
