@@ -1,20 +1,15 @@
 import React from 'react';
-import { Text, View, Image, Linking } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 
-import { Card } from './common';
-import { CardSection } from './common';
+import { Card, CardSection } from './common';
 
 
-const SearchEventCard = ({event}) => {
+const SearchEventCard = ({ event }) => {
     return (
         <Card>
-            <CardSection>
-                <View>
-                    <Text>{event.event_name}</Text>
-                    <Text>{event.event_date}</Text>
-                    <Text>{event.event_time}</Text>
-                </View>
-            </CardSection>
+            <Text>{event.event_name}</Text>
+            <Text>{event.event_date}</Text>
+            <Text>{event.event_time}</Text>
         </Card>
     )
 };
@@ -22,3 +17,4 @@ const SearchEventCard = ({event}) => {
 
 
 export default SearchEventCard;
+
