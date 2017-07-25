@@ -3,13 +3,12 @@ import { ROOT } from '../../config.js';
 import axios from 'react-native-axios'
 
 
-export function fetchEventsInArea() {
+export function fetchAllEventsInArea(areaId) {
   return function (dispatch) {
     dispatch(fetchEventsInAreaRequest());
-    axios.get(`${ROOT}/events/area/:area`)
+    axios.get(`${ROOT}/areas/${areaId}/events`)
       .then(res => {
-        //receive data
-        dispatch(fetchEventsInAreaSuccess(res.data.events))
+        dispatch(fetchEventsInAreaSuccess(res.data.data))
       })
       .catch(err => {
         dispatch(fetchEventsInAreaError(err))

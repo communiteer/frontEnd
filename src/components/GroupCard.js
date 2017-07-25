@@ -1,24 +1,49 @@
-import React from 'react';
-import { Text, View, Image, Linking } from 'react-native';
+import React, { Component } from 'react';
+import { Text, View, Image, ScrollView } from 'react-native';
+import * as actions from '../actions';
+import { Card, CardSection } from './common';
 
-import {CardSection, Card} from './common';
 
+class GroupCard extends Component {
 
-const GroupCard = ({ group }) => {
+	render() {
+		return (
+			<Card>
+				<ScrollView>
+					<CardSection>
+						<Image
+							style={styles.imageStyle}
+							source={{ uri: '/Users/benwhitfield/Documents/code/Communiteer/frontEnd/src/images/working groups.jpg' }}
+						/>
+					</CardSection>
 
-    return (
-        <View>
-        <Card>
-            <CardSection>
-                <View>
-                    <Text>{group.group_name}</Text>
-                    <Text>{group.admin_fname + ' ' + group.admin_fname}</Text>
-                </View>
-            </CardSection>
-        </Card>
-        </View>
-    )
+					<CardSection>
+						<Text>Group Name: {this.props.group_name}</Text>
+					</CardSection>
+
+					<CardSection>
+						<Text>Admin: {this.props.admin_fname} {this.props.admin_lname}</Text>
+					</CardSection>
+
+					<CardSection>
+						<Text>Contact: {this.props.contact_details}</Text>
+					</CardSection>
+
+					<CardSection>
+						<Text>{this.props.description}</Text>
+					</CardSection>
+				</ScrollView>
+			</Card>
+		)
+	}
 };
 
+const styles = {
+	imageStyle: {
+		height: 200,
+		flex: 1,
+		width: null
+	}
+}
 
 export default GroupCard;

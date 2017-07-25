@@ -8,7 +8,8 @@ export function fetchUserData(id) {
   return function (dispatch) {
     dispatch(fetchUserRequest());
     // go get data through fetch request
-    axios.get(`${ROOT}/users/1`)
+    // USER ID HARD CODED IN PROFILE PAGE!! Need prop passing
+    axios.get(`${ROOT}/users/${id}`)
       .then(res => {
         //receive data
         dispatch(fetchUserSuccess(res.data.data[0]))

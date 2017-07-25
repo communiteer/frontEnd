@@ -1,12 +1,17 @@
 import { combineReducers } from 'redux';
 import UserProfileReducer from './UserProfileReducer';
-import UserEventsReducer from './UserEventsReducer';
-import UserGroupsReducer from './UserGroupsReducer';
-import UserNotificationsReducer from './UserNotificationsReducer';
+
+import GroupsInAreaReducer from './GroupsInAreaReducer';
+import EventsInAreaReducer from './EventsInAreaReducer';
+import DisplayGroupPageReducer from './DisplayGroupPageReducer';
+import DisplayEventSkillsReducer from './DisplayEventSkillsReducer';
 
 export default combineReducers({
   user: UserProfileReducer,
-  events: UserEventsReducer,
-  groups: UserGroupsReducer,
-  notifications: UserNotificationsReducer
+  groups: GroupsInAreaReducer,
+  userEvents: UserEventsReducer,
+  events: EventsInAreaReducer,
+  group: DisplayGroupPageReducer,
+  eventSkills: DisplayEventSkillsReducer
+
 })
