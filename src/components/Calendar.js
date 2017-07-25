@@ -66,7 +66,6 @@ class Calendar extends Component {
   }
 
   renderItem(item) {
-    console.log(item)
     return (
       <View style={[styles.item, { height: 70 }]} onPress={() => Actions.anEvent()}>
         <Text onPress={() => Actions.anEvent()}>{item.group_name}</Text>
@@ -99,8 +98,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 const mapStateToProps = (state) => {
+
   return {
-    event: state.events.userEvents.data || [],
+    event: state.userEvents.userEvents.data || [],
   }
 }
 

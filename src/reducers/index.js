@@ -5,6 +5,7 @@ import GroupsInAreaReducer from './GroupsInAreaReducer';
 import EventsInAreaReducer from './EventsInAreaReducer';
 import DisplayGroupPageReducer from './DisplayGroupPageReducer';
 import DisplayEventSkillsReducer from './DisplayEventSkillsReducer';
+import UserEventsReducer from './UserEventsReducer';
 
 export default combineReducers({
   user: UserProfileReducer,

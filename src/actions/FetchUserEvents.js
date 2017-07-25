@@ -26,10 +26,10 @@ export function fetchUserEvents() {
    };
  }
 
-  export function fetchUserEventsSuccess (events) {
+  export function fetchUserEventsSuccess (userEvents) {
    return {
      type: types.FETCH_USER_EVENTS_SUCCESS,
-     data: events
+     data: userEvents
    };
  }
 
