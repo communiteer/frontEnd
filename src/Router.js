@@ -11,12 +11,13 @@ import Search from './components/Search';
 import AddEvent from './components/AddEvent';
 import AddGroup from './components/AddGroup';
 import EventCard from './components/EventCard';
+import GroupCard from './components/GroupCard';
 
 const RouterComponent = () => {
-
   return (
     <Router sceneStyle={{ paddingTop: 65 }}>
-      <Scene key="root">
+      
+			<Scene key="root">
         <Scene
           key="tabbar"
           tabs
@@ -41,6 +42,8 @@ const RouterComponent = () => {
         <Scene key="addGroup" component={AddGroup} title="Add Group!" />
         <Scene key="addEvent" component={AddEvent} title="Add Event!" />
         <Scene key="anEvent" component={EventCard} title="The Event" />
+				<Scene key="aGroup" component={GroupCard} title="Group"/>
+
       </Scene>
     </Router>
   );
