@@ -11,7 +11,7 @@ const SearchEventCard = ({ event }) => {
             <Text>{event.event_date}</Text>
             <Text>{event.event_time}</Text>
         </Card>
-    )
+    );
 };
 
 

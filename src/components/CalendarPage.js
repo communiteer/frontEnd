@@ -8,25 +8,25 @@ import { Actions } from 'react-native-router-flux';
 
 
 const CalendarPage = () => {
-	return (
-		<Calendar />
-	);
+    return (
+        <Calendar />
+    );
 };
 
 const styles = {
-	container: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-		backgroundColor: '#bd3000'
-	},
-	calendar: {
-		fontSize: 20,
-		textAlign: 'center',
-		margin: 10,
-		color: '#ffffff'
-	}
-}
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#bd3000'
+    },
+    calendar: {
+        fontSize: 20,
+        textAlign: 'center',
+        margin: 10,
+        color: '#ffffff'
+    }
+};
 
 export default CalendarPage;
 

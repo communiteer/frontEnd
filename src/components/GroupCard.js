@@ -6,44 +6,44 @@ import { Card, CardSection } from './common';
 
 class GroupCard extends Component {
 
-	render() {
-		return (
-			<Card>
-				<ScrollView>
-					<CardSection>
-						<Image
-							style={styles.imageStyle}
-							source={{ uri: '/Users/benwhitfield/Documents/code/Communiteer/frontEnd/src/images/working groups.jpg' }}
-						/>
-					</CardSection>
+    render() {
+        return (
+            <Card>
+                <ScrollView>
+                    <CardSection>
+                        <Image
+                            style={styles.imageStyle}
+                            source={{ uri: '/Users/benwhitfield/Documents/code/Communiteer/frontEnd/src/images/working groups.jpg' }}
+                        />
+                    </CardSection>
 
-					<CardSection>
-						<Text>Group Name: {this.props.group_name}</Text>
-					</CardSection>
+                    <CardSection>
+                        <Text>Group Name: {this.props.group_name}</Text>
+                    </CardSection>
 
-					<CardSection>
-						<Text>Admin: {this.props.admin_fname} {this.props.admin_lname}</Text>
-					</CardSection>
+                    <CardSection>
+                        <Text>Admin: {this.props.admin_fname} {this.props.admin_lname}</Text>
+                    </CardSection>
 
-					<CardSection>
-						<Text>Contact: {this.props.contact_details}</Text>
-					</CardSection>
+                    <CardSection>
+                        <Text>Contact: {this.props.contact_details}</Text>
+                    </CardSection>
 
-					<CardSection>
-						<Text>{this.props.description}</Text>
-					</CardSection>
-				</ScrollView>
-			</Card>
-		)
-	}
-};
+                    <CardSection>
+                        <Text>{this.props.description}</Text>
+                    </CardSection>
+                </ScrollView>
+            </Card>
+        );
+    }
+}
 
 const styles = {
-	imageStyle: {
-		height: 200,
-		flex: 1,
-		width: null
-	}
-}
+    imageStyle: {
+        height: 200,
+        flex: 1,
+        width: null
+    }
+};
 
 export default GroupCard;

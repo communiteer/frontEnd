@@ -11,7 +11,7 @@ const AddEvent = () => {
         <View>
             <Text>ADD EVENT</Text>
         </View>
-    )
-}
+    );
+};
 
 export default AddEvent;

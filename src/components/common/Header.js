@@ -5,9 +5,9 @@ const Header = (props) => {
     const { textStyle , viewStyle} = styles;
 
     return (
-    <View style={viewStyle} >
-        <Text style={textStyle}>{props.headerText}</Text>
-    </View>
+        <View style={viewStyle} >
+            <Text style={textStyle}>{props.headerText}</Text>
+        </View>
     );
 };
 const styles = {
@@ -26,5 +26,5 @@ const styles = {
     textStyle: {
         fontSize: 20
     }
-}
+};
 export  {Header};

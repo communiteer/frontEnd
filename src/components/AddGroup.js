@@ -10,8 +10,8 @@ const AddGroup = () => {
         <View>
             <Text>Add Group Page</Text>
         </View>
-    )
-}
+    );
+};
 
 
 

@@ -14,14 +14,14 @@ import Input from './common/Input';
 
 const SignUp2 = () => {
 
-        return (
-<View>
-    <Text>
+    return (
+        <View>
+            <Text>
         SIGN UP 2
-    </Text>
-</View>
+            </Text>
+        </View>
 
-        )
+    );
 };
 
-export default SignUp2
+export default SignUp2;

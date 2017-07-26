@@ -8,11 +8,11 @@ import DisplayEventSkillsReducer from './DisplayEventSkillsReducer';
 import UserEventsReducer from './UserEventsReducer';
 
 export default combineReducers({
-  user: UserProfileReducer,
-  groups: GroupsInAreaReducer,
-  userEvents: UserEventsReducer,
-  events: EventsInAreaReducer,
-  group: DisplayGroupPageReducer,
-  eventSkills: DisplayEventSkillsReducer
+    user: UserProfileReducer,
+    groups: GroupsInAreaReducer,
+    userEvents: UserEventsReducer,
+    events: EventsInAreaReducer,
+    group: DisplayGroupPageReducer,
+    eventSkills: DisplayEventSkillsReducer
 
-})
+});
