@@ -13,7 +13,7 @@ export const addGroupUpdate = ({ prop, value }) => {
 }
 
 export const addGroupCreate = ({ group_name, description, contact_details, user_id, area}) => {
-    axios.post(`${ROOT}/users/${user_id}/group`, {
+  axios.post(`${ROOT}/users/${user_id}/group`, {
         name: group_name,
         description: description,
         details: contact_details,
@@ -25,4 +25,5 @@ export const addGroupCreate = ({ group_name, description, contact_details, user_
       .catch(function (error) {
         console.log(error);
       });
+    return {type: types.ADD_GROUP_CREATE}
 }
