@@ -1,6 +1,6 @@
 import React from 'react';
-import { Scene, Router, Actions } from 'react-native-router-flux';
-import { Text, View } from 'react-native';
+import { Scene, Router } from 'react-native-router-flux';
+import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import ProfilePage from './components/ProfilePage';
@@ -49,7 +49,7 @@ const RouterComponent = () => {
     );
 };
 
-function CalendarIcon(props) {
+function CalendarIcon() {
     return (
         <View>
             <Icon name="calendar" size={30} color="#900" />
@@ -58,7 +58,7 @@ function CalendarIcon(props) {
 }
 
 
-function GroupsIcon(props) {
+function GroupsIcon() {
     return (
         <View>
             <Icon name="group" size={30} color="#900" />
@@ -66,7 +66,7 @@ function GroupsIcon(props) {
     );
 }
 
-function HomeIcon(props) {
+function HomeIcon() {
     return (
         <View>
             <Icon name="home" size={30} color="#900" />
@@ -74,7 +74,7 @@ function HomeIcon(props) {
     );
 }
 
-function NotificationsIcon(props) {
+function NotificationsIcon() {
     return (
         <View>
             <Icon name="flag" size={30} color="#900" />
@@ -82,7 +82,7 @@ function NotificationsIcon(props) {
     );
 }
 
-function SearchIcon(props) {
+function SearchIcon() {
     return (
         <View>
             <Icon name="search" size={30} color="#900" />
