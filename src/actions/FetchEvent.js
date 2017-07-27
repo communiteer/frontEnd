@@ -7,7 +7,7 @@ export function fetchEvent() {
     return function (dispatch) {
         dispatch(fetchEventRequest());
         // go get data through fetch request
-        axios.get(`${ROOT}/events/:id`)
+        return axios.get(`${ROOT}/events/:id`)
             .then(res => {
                 //receive data
                 dispatch(fetchEventSuccess(res.data));

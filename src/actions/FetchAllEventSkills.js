@@ -6,7 +6,7 @@ import axios from 'react-native-axios';
 export function fetchAllEventSkills(eventId) {
     return function (dispatch) {
         dispatch(fetchEventSkillsRequest());
-        axios.get(`${ROOT}/events/${eventId}/skills`)
+        return axios.get(`${ROOT}/events/${eventId}/skills`)
             .then(res => {
                 dispatch(fetchEventSkillsSuccess(res.data.data));
             })

@@ -6,7 +6,7 @@ import axios from 'react-native-axios';
 export function fetchAllEventsInArea(areaId) {
     return function (dispatch) {
         dispatch(fetchEventsInAreaRequest());
-        axios.get(`${ROOT}/areas/${areaId}/events`)
+        return axios.get(`${ROOT}/areas/${areaId}/events`)
             .then(res => {
                 dispatch(fetchEventsInAreaSuccess(res.data.data));
             })

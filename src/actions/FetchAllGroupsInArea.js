@@ -6,7 +6,7 @@ import axios from 'react-native-axios';
 export function fetchAllGroupsInArea(areaId) {
     return function (dispatch) {
         dispatch(fetchGroupRequest());
-        axios.get(`${ROOT}/areas/${areaId}/groups`)
+        return axios.get(`${ROOT}/areas/${areaId}/groups`)
             .then(res => {
                 //receive data
                 dispatch(fetchGroupSuccess(res.data.data));
